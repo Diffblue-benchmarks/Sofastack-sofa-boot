@@ -1,0 +1,196 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    java-assume-inputs-non-null: true
+    max-nondet-array-length: 10
+    string-non-empty: true
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+units:
+  - target:
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/service/component/ServiceComponent.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/service/component/ServiceComponent.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/api/ServiceRuntimeException.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/api/ServiceRuntimeException.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/api/component/Property.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/api/component/Property.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/model/ComponentType.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/model/ComponentType.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/binding/Binding.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/binding/Binding.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/binding/BindingAdapter.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/binding/BindingAdapter.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/binding/BindingAdapterFactory.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/binding/BindingAdapterFactory.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/component/AbstractComponent.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/component/AbstractComponent.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/component/Implementation.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/component/Implementation.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/component/SofaRuntimeContext.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/component/SofaRuntimeContext.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/health/HealthResult.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/health/HealthResult.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/log/SofaLogger.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/log/SofaLogger.java
+    # Child of ServiceComponent.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spi/util/ComponentNameFactory.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spi/util/ComponentNameFactory.java
+  - target:
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/model/ComponentStatus.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/model/ComponentStatus.java
+  - target:
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/spring/ClientFactoryBeanPostProcessor.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/spring/ClientFactoryBeanPostProcessor.java
+    # Child of ClientFactoryBeanPostProcessor.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/api/annotation/SofaClientFactory.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/api/annotation/SofaClientFactory.java
+    # Child of ClientFactoryBeanPostProcessor.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/api/aware/ClientFactoryAware.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/api/aware/ClientFactoryAware.java
+    # Child of ClientFactoryBeanPostProcessor.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/api/client/ClientFactory.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/api/client/ClientFactory.java
+    # Child of ClientFactoryBeanPostProcessor.class
+    - dir: runtime-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/runtime/client/impl/ClientFactoryImpl.class
+      sourceDir: runtime-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/runtime/client/impl/ClientFactoryImpl.java
+  - target:
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/stage/SpringContextInstallStage.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/stage/SpringContextInstallStage.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/ApplicationRuntimeModel.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/ApplicationRuntimeModel.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/constants/SofaModuleFrameworkConstants.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/constants/SofaModuleFrameworkConstants.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/deployment/DependencyTree.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/deployment/DependencyTree.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/deployment/DeploymentDescriptor.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/deployment/DeploymentDescriptor.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/deployment/DeploymentException.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/deployment/DeploymentException.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/loader/DynamicSpringContextLoader.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/loader/DynamicSpringContextLoader.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/loader/SpringContextLoader.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/loader/SpringContextLoader.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/spring/config/SofaModuleProperties.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/spring/config/SofaModuleProperties.java
+    # Child of SpringContextInstallStage.class
+    - dir: isle-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/isle/utils/NamedThreadFactory.class
+      sourceDir: isle-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/isle/utils/NamedThreadFactory.java
+  - target:
+    - dir: healthcheck-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/healthcheck/core/AfterReadinessCheckCallbackProcessor.class
+      sourceDir: healthcheck-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/healthcheck/core/AfterReadinessCheckCallbackProcessor.java
+    # Child of AfterReadinessCheckCallbackProcessor.class
+    - dir: healthcheck-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/healthcheck/log/SofaBootHealthCheckLoggerFactory.class
+      sourceDir: healthcheck-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/healthcheck/log/SofaBootHealthCheckLoggerFactory.java
+    # Child of AfterReadinessCheckCallbackProcessor.class
+    - dir: healthcheck-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/healthcheck/startup/ReadinessCheckCallback.class
+      sourceDir: healthcheck-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/healthcheck/startup/ReadinessCheckCallback.java
+    # Child of AfterReadinessCheckCallbackProcessor.class
+    - dir: infra-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/infra/utils/BinaryOperators.class
+      sourceDir: infra-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/infra/utils/BinaryOperators.java
+    # Child of AfterReadinessCheckCallbackProcessor.class
+    - dir: healthcheck-sofa-boot-starter/target/classes
+      file: com/alipay/sofa/healthcheck/utils/HealthCheckUtils.class
+      sourceDir: healthcheck-sofa-boot-starter/src/main/java
+      sourceFile: com/alipay/sofa/healthcheck/utils/HealthCheckUtils.java
